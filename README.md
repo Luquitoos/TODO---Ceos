@@ -35,7 +35,7 @@ Este projeto foi desenvolvido como parte do processo seletivo para CEOs, impleme
 - **Docker** para containerização
 
 ### Frontend
-- **Next.js 14** (React)
+- **Next.js 15** (React)
 - **Tailwind CSS** para estilização
 - **Heroicons** para ícones
 - **Axios** para requisições HTTP
