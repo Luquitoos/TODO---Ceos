@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #FBFFE4; /* */
+  --foreground: #3D8D7A; /* */
+}
+
+body {
+  color: var(--foreground); /* */
+  background: var(--background); /* */
+  /* font-family: Arial, Helvetica, sans-serif; */ /* This will be overridden by DM Sans via layout.jsx and tailwind.config.js */
+}
+
+/* Optional: Add a class for the placeholder block if you prefer not to use bg-input-bg directly */
+.placeholder-block {
+  @apply bg-input-bg rounded-xl;
+}
