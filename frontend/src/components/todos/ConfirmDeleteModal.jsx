@@ -2,18 +2,18 @@
 import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/react/24/outline';
 
 /**
- * Modal component for confirming deletion of a todo item or all todos
- * @param {boolean} isOpen - Whether the modal is visible
- * @param {function} onClose - Function to call when closing the modal
- * @param {function} onConfirm - Function to call when confirming the deletion
- * @param {string} title - Title of the modal
- * @param {string} message - Message describing what will be deleted
- * @returns {JSX.Element|null} - The modal component or null if not visible
+ * Componente modal para confirmar a exclusão de um item de tarefa ou de todos os itens
+ * @param {boolean} isOpen - Se o modal está visível
+ * @param {function} onClose - Função a ser chamada ao fechar o modal
+ * @param {function} onConfirm - Função a ser chamada ao confirmar a exclusão
+ * @param {string} title - Título do modal
+ * @param {string} message - Mensagem descrevendo o que será excluído
+ * @returns {JSX.Element|null} - O componente modal ou nulo se não estiver visível
  */
 export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, title, message }) {
   if (!isOpen) return null;
 
-  // Ensure backend integration: onConfirm is called, then modal closes
+  // Garantir a integração do backend: onConfirm é chamado e, em seguida, o modal é fechado
   const handleConfirm = () => {
     onConfirm();
     onClose();
@@ -23,7 +23,7 @@ export default function ConfirmDeleteModal({ isOpen, onClose, onConfirm, title, 
     <div className="fixed inset-0 z-40 bg-black bg-opacity-60 flex items-center justify-center p-4 backdrop-blur-sm">
       <div className="bg-background p-6 rounded-2xl shadow-xl w-full max-w-md transform transition-all scale-100 opacity-100">
         <div className="flex justify-between items-center mb-1">
-            {/* Space to prevent XMarkIcon from overlapping the title if title is long */}
+            {/* Espaço para evitar que o XMarkIcon se sobreponha ao título se ele for longo */}
             <span className="w-6"></span> 
             <h3 className="text-lg font-semibold text-foreground text-center flex-grow">{title}</h3>
             <button 
