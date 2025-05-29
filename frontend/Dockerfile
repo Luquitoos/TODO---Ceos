@@ -2,7 +2,7 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json ./
-# Install all dependencies including dev dependencies needed for build
+
 RUN npm ci && npm cache clean --force
 COPY . .
 RUN npm run build
