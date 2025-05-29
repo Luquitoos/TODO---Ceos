@@ -13,7 +13,7 @@ export default function AppHeader({ searchTerm, onSearchTermChange, onLogout }) 
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useState(searchTerm);
 
-  // Debounce effect for search input
+  // Efeito debounce para entrada de pesquisa (evita que a função seja chamada toda hora, tipo um delay
   useEffect(() => {
     const timer = setTimeout(() => {
       setDebouncedSearchTerm(searchTerm);
@@ -23,13 +23,6 @@ export default function AppHeader({ searchTerm, onSearchTermChange, onLogout }) 
   }, [searchTerm]);
 
   useEffect(() => {
-    // Call the onSearchTermChange with the debounced value if needed
-    // If you want to trigger backend search here, do it here
-    // For now, we assume onSearchTermChange is responsible for backend call
-    // Uncomment below if you want to trigger onSearchTermChange only after debounce:
-    // if (debouncedSearchTerm !== searchTerm) {
-    //   onSearchTermChange({ target: { value: debouncedSearchTerm } });
-    // }
   }, [debouncedSearchTerm]);
 
   const handleLogoutClick = () => {
@@ -92,7 +85,7 @@ export default function AppHeader({ searchTerm, onSearchTermChange, onLogout }) 
                 <ArrowRightOnRectangleIcon className="h-5 w-5 mr-3" aria-hidden="true" />
                 Sair
               </button>
-              {/* Adicionar mais itens ao menu se necessário */}
+              {/* aqui seria se fosse para adicionar mais opções, mas não interesava mais */}
             </div>
           )}
         </div>
