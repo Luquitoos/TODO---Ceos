@@ -5,14 +5,14 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
 const TOKEN_KEY = 'ceos_todo_token';
 const USER_KEY = 'ceos_todo_user';
 
-console.log('API URL being used:', API_URL); // Debug log
+console.log('API URL being used:', API_URL); // log usado para debug, voce nao vai ver na pratica
 
 class AuthService {
   constructor() {
     this.http = axios.create({
       baseURL: API_URL,
-      withCredentials: false, // Alterado para false para evitar problemas de CORS
-      timeout: 10000, // 10 seconds timeout
+      withCredentials: false, 
+      timeout: 10000, // 10 segundos tentanto conectar
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -63,7 +63,7 @@ class AuthService {
         name,
         email,
         password,
-        confirmPassword  // Adicionado confirmPassword ao corpo da requisição
+        confirmPassword
       });
       
       if (response.data.token) {
