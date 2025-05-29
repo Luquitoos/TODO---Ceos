@@ -62,7 +62,7 @@ export default function TodosPage() {
     };
 
     checkAuthAndFetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [router]);
 
   // Efeito para buscar tarefas quando o termo de busca mudar
@@ -72,7 +72,7 @@ export default function TodosPage() {
     }, 300);
     
     return () => clearTimeout(searchWithDebounce);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, [searchTerm]);
 
   // Função para buscar tarefas com base no termo de busca
@@ -164,7 +164,7 @@ const fetchTodos = async () => {
 
   const displayToast = (message, type = 'info') => {
     setToast({ show: true, message, type });
-    // Auto hide after 5 seconds
+    // a mensagem sai depois de 5 segundos
     setTimeout(() => {
       setToast(prev => ({ ...prev, show: false }));
     }, 5000);
