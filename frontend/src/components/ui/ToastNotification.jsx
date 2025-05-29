@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import {
   XMarkIcon,
   InformationCircleIcon,
-  CheckCircleIcon as CheckCircleSolidHero // Renomeado para evitar conflito
+  CheckCircleIcon as CheckCircleSolidHero // Renomeado para evitar conflito (estava dando conflito)
 } from '@heroicons/react/24/solid'; // Usando solid para ícones de status
 
 export default function ToastNotification({ message, type, onClose }) {
@@ -20,7 +20,7 @@ export default function ToastNotification({ message, type, onClose }) {
     Icon = CheckCircleSolidHero;
   } else if (type === 'error') {
     bgColor = 'bg-red-500';
-    Icon = InformationCircleIcon; // Ou um ícone de erro
+    Icon = InformationCircleIcon;
   }
 
   return (
