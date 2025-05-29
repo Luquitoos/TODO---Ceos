@@ -16,9 +16,9 @@ const todoSchema = new mongoose.Schema({
     required: false // não é obrigatório ter prazo
   },
   dueTime: {
-    type: String, // Ex: '15:00' (HH:mm), pode evoluir depois para validação de formato se quiser
+    type: String,
     required: false,
-    default: null // mantém compatibilidade com tarefas antigas
+    default: null
   },
   completed: {
     type: Boolean,
