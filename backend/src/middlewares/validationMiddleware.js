@@ -3,7 +3,7 @@ import { body, validationResult } from 'express-validator'
 export const validateRequest = (req, res, next) => {
   const errors = validationResult(req)
   if (!errors.isEmpty()) {
-    // Check if there's a password length validation error
+    // faz um verificação quando o usuario tentar criar a senha no registrar ela tem menos de 6 digitos
     const passwordError = errors.array().find(
       err => err.path === 'password' && err.msg === 'Digite uma senha igual ou superior a 6 digitos'
     )
