@@ -6,7 +6,7 @@ import { errorHandler } from './middlewares/errorMiddleware.js'
 
 const app = express()
 
-// Configuração CORS explícita
+// Configuração CORS para integrar o backend com o front, filtrando de quem recebe as requisições e quais metodos vão usar
 app.use(cors({
   origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'https://todo-ceos.vercel.app'],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
