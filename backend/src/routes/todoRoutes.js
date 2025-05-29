@@ -17,17 +17,13 @@ router.get('/', todoController.getTodos);
 // Aplicando validação na criação de TODO
 router.post('/', todoValidationRules.create, validateRequest, todoController.createTodo);
 
-/**
- * PUT routes
- * - IMPORTANTE: rotas específicas (/mark-all) devem vir ANTES das rotas com parâmetros (/:id)
- */
+ //PUT routes - toas para marcar todas as tarefas e validar a atualização de status dela nauquele id
+ 
 router.put('/mark-all', todoController.markAllCompleted);
 router.put('/:id', todoValidationRules.update, validateRequest, todoController.updateTodo);
 
-/**
- * DELETE routes
- * - IMPORTANTE: rotas específicas devem vir ANTES das rotas com parâmetros
- */
+//DELETE routes - serve para deletar todas as todos de uma vez e valida a atualizao de status dela naquele id
+
 router.delete('/', todoController.deleteAllTodos);
 router.delete('/:id', todoController.deleteTodo);
 
