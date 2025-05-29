@@ -25,11 +25,11 @@ export default function CreateEditTodoModal({ isOpen, onClose, onSave, editingTo
     if (editingTodo) {
       setTitle(editingTodo.title || '');
       setDescription(editingTodo.description || '');
-      // Handle dueDate in format YYYY-MM-DD if present
+      // Tratar o dueDate no formato YYYY-MM-DD, se a data for presente
       if (editingTodo.dueDate) {
-        // Accepts both DD/MM/YYYY and YYYY-MM-DD
+        // aceita tanto DD/MM/YYYY como YYYY-MM-DD
         if (editingTodo.dueDate.includes('/')) {
-          // Convert DD/MM/YYYY to YYYY-MM-DD
+          // Converte DD/MM/YYYY para YYYY-MM-DD
           const dateParts = editingTodo.dueDate.split(', ')[0].split('/');
           if (dateParts.length === 3) {
             setDueDate(`${dateParts[2]}-${dateParts[1]}-${dateParts[0]}`);
@@ -52,7 +52,6 @@ export default function CreateEditTodoModal({ isOpen, onClose, onSave, editingTo
     setError('');
   }, [editingTodo, isOpen]);
 
-  // Corrigido: Data local correta para min no input
   const getTodayDate = () => {
     const now = new Date();
     const year = now.getFullYear();
@@ -63,7 +62,7 @@ export default function CreateEditTodoModal({ isOpen, onClose, onSave, editingTo
 
   const getCurrentTime = () => {
     const now = new Date();
-    // Format HH:MM
+    // Formato HH:MM
     let h = now.getHours();
     let m = now.getMinutes();
     return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}`;
@@ -72,7 +71,6 @@ export default function CreateEditTodoModal({ isOpen, onClose, onSave, editingTo
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Validation
     if (!title.trim()) {
       setError('Título é obrigatório.');
       return;
