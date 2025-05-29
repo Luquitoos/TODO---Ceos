@@ -3,16 +3,15 @@ import { PencilSquareIcon, TrashIcon } from '@heroicons/react/24/outline';
 import React from 'react';
 
 export default function TodoItem({ todo, onToggleComplete, onEdit, onDelete }) {
-  // Helper to format date
   const formatDate = (dateString) => {
     if (!dateString) return '';
-    // Try to parse as ISO, fallback to original
+    // ele tenta ver o formato e como iso de data e retorna para o formato original
     const date = new Date(dateString);
     if (isNaN(date.getTime())) return dateString;
     return date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit', year: 'numeric' });
   };
 
-  // Helper to format time from a Date or HH:mm/HH:mm:ss string
+  // ajuda a pegar ou capturar o tempo pela data ou HH:mm/HH:mm:ss em formato string (que é o enviado para ele)
   const formatTimeFromDate = (dateString) => {
     if (!dateString) return '';
     const date = new Date(dateString);
@@ -20,7 +19,7 @@ export default function TodoItem({ todo, onToggleComplete, onEdit, onDelete }) {
     // Capturar hora local
     return date.toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit', hour12: false });
   };
-  // Helper to format time (expects "HH:mm" or "HH:mm:ss")
+  //  formatar a hora (espera "HH:mm" ou "HH:mm:ss")
   const formatTime = (timeString) => {
     if (!timeString) return '';
     const [h, m] = timeString.split(':');
@@ -124,13 +123,13 @@ export default function TodoItem({ todo, onToggleComplete, onEdit, onDelete }) {
         </p>
       )}
 
-      {/* Data de criação e prazo - agora com horários! */}
+      {/* Data de criação e prazo com horario */}
       <div className="text-sm ml-8 mb-2">
         <span style={{ color: '#3D8D7A' }}>
           {(todo.creationDate || todo.createdAt) && (
             <>
               Criada em {formatDate(todo.creationDate || todo.createdAt)}
-              {/* Mostra horário de criação, se disponível */}
+              {/* Mostra horário de criação */}
               {((todo.creationDate || todo.createdAt) && formatTimeFromDate(todo.creationDate || todo.createdAt)) && (
                 <span> {formatTimeFromDate(todo.creationDate || todo.createdAt)}</span>
               )}
