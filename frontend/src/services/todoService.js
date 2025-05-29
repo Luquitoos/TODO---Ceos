@@ -61,7 +61,7 @@ class TodoService {
       if (!searchTerm) {
         return this.getTodos();
       }
-      // Busca por API usando o parâmetro correto
+      // Busca por API
       const response = await this.http.get(`/todos/search?search=${encodeURIComponent(searchTerm)}`);
       return response.data;
     } catch (error) {
