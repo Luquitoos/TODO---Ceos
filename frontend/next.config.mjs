@@ -2,7 +2,6 @@
 const nextConfig = {
   output: 'standalone',
   experimental: {
-    // Removed invalid outputFileTracingRoot option
   },
   async rewrites() {
     return [
