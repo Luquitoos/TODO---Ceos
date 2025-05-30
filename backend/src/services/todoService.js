@@ -6,7 +6,7 @@ class TodoService {
       title: todoData.title,
       description: todoData.description,
       dueDate: todoData.dueDate,
-      dueTime: todoData.dueTime, // Incluído!
+      dueTime: todoData.dueTime,
       completed: todoData.completed || false,
       user: userId,
       createdAt: new Date()
