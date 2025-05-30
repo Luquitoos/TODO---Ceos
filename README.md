@@ -65,7 +65,7 @@ TodoCEOs/
 └── README.md
 ```
 
-## Configuração do Ambiente (ATUALMENTE DEIXEI OS ENVS NO GIT PARA FACILITAR A AVALIAÇÃO DOS MEMBROS DA CEOS, MAS IREI TIRAR)
+## Configuração do Ambiente
 
 ### 1. Configuração do Backend
 
